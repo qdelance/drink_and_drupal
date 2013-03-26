@@ -71,10 +71,11 @@ SCOTCH
 Mobile
 ------
 
-* Problème : Traffic mobile a dépassé le traffic desktop, Drupal doit s''adapter
-* Intégration HTML 5 (thème, composants de formulaires)
+* Problème : Trafic mobile a dépassé le traffic desktop, Drupal doit s''adapter
+* Thème Drupal HTML5 par défaut, arrêt support IE6 et IE 7...
+* Ajout des composants de formulaire HTML 5 (modules Telephone, Link, EMail, Picture)
 * Support du Responsive Web Design (barre d''outils, formulaires de contribution, administration par exemple dans Views)
-* TODO: Screenshots
+* Demo: Contenu avec champs HTML5
 
 Views in Drupal Core/VDC
 ------------------------
@@ -85,7 +86,7 @@ Views in Drupal Core/VDC
 * Suppression de CTools
 * Ajout d''une version simplifiée de Views Bulk Operations (VBO), module Actions, composant 
 * Ajout de composants "Contextual links" (infos plus compactes ? ) et "Dropbuttons" (Mettre Edit/Delete)
-* Demo: un dashboard d''admin
+* Demo: un dashboard d''admin, cf screenshot
 
 Autres améliorations
 --------------------
