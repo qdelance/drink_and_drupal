@@ -9,7 +9,7 @@ Historique
 * Janvier 2007 = sortie de Drupal 7
 * Plusieurs mois de retard
 * Volonté d''améliorer le respect du planning pour Drupal 8
-* Sélection d''en ensemble de priorités "les initiatives"
+* Sélection d''un ensemble de priorités "les initiatives"
 
 
 Les initiatives
@@ -81,16 +81,17 @@ Views in Drupal Core/VDC
 * Conversion de la home /node en vue
 * Conversion future des interface d''admin (contenu, utilisateurs) ?
 * Suppression de CTools
-* Ajout d''une version simplifiée de Views Bulk Operations (VBO)
-* Ajout de composants
-* TODO: lister les composants + démo
+* Ajout d''une version simplifiée de Views Bulk Operations (VBO), module Actions, composant 
+* Ajout de composants "Contextual links" (infos plus compactes ? ) et "Dropbuttons" (Mettre Edit/Delete)
+* Demo: un dashboard d''admin
 
 Autres améliorations
 --------------------
 
 * Reorganisation de modules (suppressions Forum/Blog et ajouts Date/EntityRef/Views/Morceau VBO/CKEditor/i18n like)
 * Adoption de Twig (statut ?)
-* Nouveau theme (je ne sais pas ou cela en est)
+* Passage à PHP 5.3, adoption PSR-0 (autoloading PHP) => impact organisation des sources
+* TODO: Nouveau theme (je ne sais pas ou cela en est)
 * Content authoring update :
 
     CKEditor intégré (à la place de Aloha)
@@ -112,3 +113,10 @@ Sources
 
 * http://fr.slideshare.net/swentel/the-state-of-drupal-8-drupalcamp-gent
 * http://fr.slideshare.net/chipway/conference-drupagoradrupal8-20121109
+
+Notes sur les trucs qui plantent
+--------------------------------
+
+Snapshot du 25/03 : 
+* Restreindre une vue à rôle ou permissions => popup erreur
+* Supprimer un champ d''une vue depuis "rearrange" => page d''erreur
