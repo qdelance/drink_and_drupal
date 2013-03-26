@@ -8,8 +8,8 @@ Historique
 
 * Janvier 2007 = sortie de Drupal 7
 * Plusieurs mois de retard
-* Volonté d''améliorer le respect du planning pour Drupal 8
-* Sélection d''un ensemble de priorités "les initiatives"
+* Volonté d'améliorer le respect du planning pour Drupal 8
+* Sélection d'un ensemble de priorités "les initiatives"
 
 
 Les initiatives
@@ -24,23 +24,23 @@ Configuration Management Initiative/CMI
 ---------------------------------------
 
 * Problème : Séparation nécessaire de la configuration et du contenu
-* Introduction de ConfigEntities au niveau de l''API
+* Introduction de ConfigEntities au niveau de l'API
 * Sauvegardes YAML files dans <DRUPAL_ROOT>/sites/default/files/config_*
 * Exemple
 ```
 $ cat <DRUPAL_ROOT>/sites/default/files/config_*/active/system.site.yml
 name: drupal8.corp.capgemini.com
 mail: quentin.delance@gmail.com
-slogan: ''
+slogan: '
 page:
-  403: ''
-  404: ''
+  403: '
+  404: '
   front: node
 admin_compact_mode: '0'
 weight_select_max: '100'
 ```
 * Suppression de la table variables
-* Ecran rudimentaire d''import
+* Ecran rudimentaire d'import
 * TODO: Nom du dossier de conf, dossier active VS staging, vérifier fin purge table variables, prep démo ou on copie entre instances ?
 
 Multilingual/D8MI
@@ -49,7 +49,7 @@ Multilingual/D8MI
 * Problème : Internationaliser un site nécessite un grand nombre de modules, 2 approches sur Drupal 8 (node level VS field level)
 * http://hojtsy.hu/was-d8mi 
 * Schema archi avec les X modules remplacés D7 vs D8
-* Choix possible de la langue durant l''installation
+* Choix possible de la langue durant l'installation
 * TODO: Trouver le schéma de la réorg des modules (source ?) demo ! (jamais testé, vérifier au passage si on peut traduire le title ! ;)
 
 WSCCI/whiskey
@@ -71,10 +71,10 @@ SCOTCH
 Mobile
 ------
 
-* Problème : Trafic mobile a dépassé le traffic desktop, Drupal doit s''adapter
+* Problème : Trafic mobile a dépassé le traffic desktop, Drupal doit s'adapter
 * Thème Drupal HTML5 par défaut, arrêt support IE6 et IE 7...
 * Ajout des composants de formulaire HTML 5 (modules Telephone, Link, EMail, Picture)
-* Support du Responsive Web Design (barre d''outils, formulaires de contribution, administration par exemple dans Views)
+* Support du Responsive Web Design (barre d'outils, formulaires de contribution, administration par exemple dans Views)
 * Demo: Contenu avec champs HTML5
 
 Views in Drupal Core/VDC
@@ -82,11 +82,11 @@ Views in Drupal Core/VDC
 
 * Problème : Intégrer un module utilisé par la plupart des installation Drupal, convertir aux normes core, sortir Drupal 8 avec un Views prêt
 * Conversion de la home /node en vue
-* Conversion future des interface d''admin (contenu, utilisateurs) ?
+* Conversion future des interface d'admin (contenu, utilisateurs) ?
 * Suppression de CTools
-* Ajout d''une version simplifiée de Views Bulk Operations (VBO), module Actions, composant 
+* Ajout d'une version simplifiée de Views Bulk Operations (VBO), module Actions, composant 
 * Ajout de composants "Contextual links" (infos plus compactes ? ) et "Dropbuttons" (Mettre Edit/Delete)
-* Demo: un dashboard d''admin, cf screenshot
+* Demo: un dashboard d'admin, cf screenshot
 
 Autres améliorations
 --------------------
@@ -104,7 +104,7 @@ Autres améliorations
 Statut et conclusion
 ----------
 
-* http://buytaert.net/code-freeze-and-thresholds => Tout n''est pas prêt pour Drupal 8
+* http://buytaert.net/code-freeze-and-thresholds => Tout n'est pas prêt pour Drupal 8
 * Statut, ce qui devrait être OK ou pas (Layout ?)
 * hooks Drupal vs API Symfony (plus loin en D9 ?)
 * FileEntity dans core (?) mais toujours pas de media (arg)
@@ -122,4 +122,4 @@ Notes sur les trucs qui plantent
 
 Snapshot du 25/03 : 
 * Restreindre une vue à rôle ou permissions => popup erreur
-* Supprimer un champ d''une vue depuis "rearrange" => page d''erreur
+* Supprimer un champ d'une vue depuis "rearrange" => page d'erreur
