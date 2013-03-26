@@ -27,16 +27,16 @@ Configuration Management Initiative/CMI
 * Introduction de ConfigEntities au niveau de l''API
 * Sauvegardes YAML files dans <DRUPAL_ROOT>/sites/default/files/config_*
 * Exemple
-	$ cat <DRUPAL_ROOT>/sites/default/files/config_*/active/system.site.yml
-	name: drupal8.corp.capgemini.com
-	mail: quentin.delance@gmail.com
-	slogan: ''
-	page:
-	  403: ''
-	  404: ''
-	  front: node
-	admin_compact_mode: '0'
-	weight_select_max: '100'
+    	$ cat <DRUPAL_ROOT>/sites/default/files/config_*/active/system.site.yml
+    	name: drupal8.corp.capgemini.com
+    	mail: quentin.delance@gmail.com
+    	slogan: ''
+    	page:
+    	  403: ''
+    	  404: ''
+    	  front: node
+    	admin_compact_mode: '0'
+    	weight_select_max: '100'
 * Suppression de la table variables
 * Ecran rudimentaire d''import
 * TODO: Nom du dossier de conf, dossier active VS staging, vérifier fin purge table variables, prep démo ou on copie entre instances ?
