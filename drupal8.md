@@ -56,17 +56,20 @@ WSCCI/whiskey
 -------------
 
 * Problème : Amélioration de la plateforme de développement sans réinventer la roue
+* Passage à PHP3, adoption PSR-0 (autoloading)
 * Intégration de Symfony 2 (routing, librairie HTTP, Twig)
 * REST server (exit module Services ?)
+* Nouvelle arborescence des fichiers
 * TODO: Comment faire une démo ?
 
 SCOTCH
 ------
 
 * Problème : Amélioration du système de mise en page, de la gestion des blocs, faire un panels dans le core et en mieux
-* Plugins Symfony appliqués aux blocs (démo/impact sur admin des blocs ? )
+* Plugins Symfony appliqués aux blocs, possibilité de définir des types de blocs (ressemble à BEAN)
 * Modules Breakpoints (core) et Layout (pas core)
 * Layout builder (sera sans doute sorti, jamais testé, démo possible, lié à un nouveau thème ? )
+* Démo: Création d'un type de blocs et le positionner dans une région du thème
 
 Mobile
 ------
@@ -100,9 +103,20 @@ Autres améliorations
     CKEditor intégré (à la place de Aloha)
     Inline Editing
     Légères amélioration ergonomiques (sidebar (dé)pliante, bouton par défaut mis en valeur, dropdown save/publish)
+* Menus et menu items fieldables
+
+Prérequis et librairies
+-----------------------
+
+* PHP 5.3.5 (discussion en cours pour 5.3.10)
+* Drush 6 pour Drupal 8
+* jQuery 1.8.2
+* jQuery 1.10.2
+* Symfony  http://crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8
+* Backbone.js et underscore
 
 Statut et conclusion
-----------
+--------------------
 
 * http://buytaert.net/code-freeze-and-thresholds => Tout n'est pas prêt pour Drupal 8
 * Statut, ce qui devrait être OK ou pas (Layout ?)
@@ -123,3 +137,4 @@ Notes sur les trucs qui plantent
 Snapshot du 25/03 : 
 * Restreindre une vue à rôle ou permissions => popup erreur
 * Supprimer un champ d'une vue depuis "rearrange" => page d'erreur
+* Positionnement d'un block custom dans la sidebar de la home => explose le rendu de la home...
