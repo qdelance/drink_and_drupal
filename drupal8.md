@@ -60,7 +60,7 @@ WSCCI/whiskey
 * Intégration de Symfony 2 (routing, librairie HTTP, Twig)
 * REST server (exit module Services ?)
 * Nouvelle arborescence des fichiers
-* TODO: Comment faire une démo ?
+* Demo : activer les modules, aller dans la page d'admin et récupérer la commande curl à lancer
 
 SCOTCH
 ------
@@ -69,7 +69,7 @@ SCOTCH
 * Plugins Symfony appliqués aux blocs, possibilité de définir des types de blocs (ressemble à BEAN)
 * Modules Breakpoints (core) et Layout (pas core)
 * Layout builder (sera sans doute sorti, jamais testé, démo possible, lié à un nouveau thème ? )
-* Démo: Création d'un type de blocs et le positionner dans une région du thème
+* Démo : Création d'un type de blocs et le positionner dans une région du thème
 
 Mobile
 ------
@@ -78,7 +78,7 @@ Mobile
 * Thème Drupal HTML5 par défaut, arrêt support IE6 et IE 7...
 * Ajout des composants de formulaire HTML 5 (modules Telephone, Link, EMail, Picture)
 * Support du Responsive Web Design (barre d'outils, formulaires de contribution, administration par exemple dans Views)
-* Demo: Contenu avec champs HTML5
+* Demo : Contenu avec champs HTML5
 
 Views in Drupal Core/VDC
 ------------------------
@@ -89,7 +89,7 @@ Views in Drupal Core/VDC
 * Suppression de CTools
 * Ajout d'une version simplifiée de Views Bulk Operations (VBO), module Actions, composant 
 * Ajout de composants "Contextual links" (infos plus compactes ? ) et "Dropbuttons" (Mettre Edit/Delete)
-* Demo: un dashboard d'admin, cf screenshot
+* Demo : un dashboard d'admin, cf screenshot
 
 Autres améliorations
 --------------------
@@ -97,9 +97,7 @@ Autres améliorations
 * Reorganisation de modules (suppressions Forum/Blog et ajouts Date/EntityRef/Views/Morceau VBO/CKEditor/i18n like)
 * Adoption de Twig (statut ?)
 * Passage à PHP 5.3, adoption PSR-0 (autoloading PHP) => impact organisation des sources
-* TODO: Nouveau theme (je ne sais pas ou cela en est)
 * Content authoring update :
-
     CKEditor intégré (à la place de Aloha)
     Inline Editing
     Légères amélioration ergonomiques (sidebar (dé)pliante, bouton par défaut mis en valeur, dropdown save/publish)
