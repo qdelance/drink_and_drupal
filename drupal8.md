@@ -6,7 +6,7 @@ Drupal 8
 Historique
 ----------
 
-* Janvier 2007 = sortie de Drupal 7
+* Janvier 2011 = sortie de Drupal 7
 * Plusieurs mois de retard
 * Volonté d'améliorer le respect du planning pour Drupal 8
 * Sélection d'un ensemble de priorités "les initiatives"
