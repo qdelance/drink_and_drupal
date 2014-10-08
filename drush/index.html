@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Drush - Drupal Shell</title>
+
+		<meta name="description" content="Drupal meetup de Toulouse du 13/10/2014">
+		<meta name="author" content="Quentin Delance">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Drupal</h1>
+					<h3>Drush Shell</h3>
+					<p>
+						<small>Par Quentin Delance / <a href="http://twitter.com/qdelance">@qdelance</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Plan (20 min max promis)</h2>
+					<ul>
+                        <li>A quoi ca sert</li>
+                        <li>Démo !!!</li>
+                        <li>Pour aller plus loin</li>
+					</ul>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Les bases</h2>
+						<p>
+							drush help
+						</p>
+					</section>
+					<section>
+						<h2>Infos sur le système</h2>
+						<p>drush status</p>
+					</section>
+                    <section>
+                        <h2>Purge le cache</h2>
+                        <p>drush cc (D7) ou cr (D8)</p>
+                    </section>
+					<section>
+						<h2>Accéder à la BD</h2>
+						<p>
+                            drush sql
+                        </p>
+					</section>
+                    <section>
+                        <h2>Réinitialiser le mot de passe de l'admin...</h2>
+                        <p>
+                        drush upwd --password="givememypasswordback" admin
+                        </p>
+                    </section>
+					<section>
+						<h2>Mettre le site en maintenance</h2>
+						<p>
+                            todo
+                        </p>
+					</section>
+                    <section>
+                        <h2>Télécharger Drupal</h2>
+                        <p>
+                            drush dl
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Installer le site</h2>
+                        <p>
+                            drush site-install
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Gérer des paquets</h2>
+                        <p>
+                            drush dl, en, dis, up
+                        </p>
+                    </section>
+				</section>
+
+                <section>
+                    <h2>Ca suffit !</h2>
+                    <p>Je veux le voir. En vrai.</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Console Symfony2 ?</h2>
+                        <p class="fragment">Mais alors, ca ressemble à la console non ?</p>
+                        <p class="fragment"><span style="color:green; font-weight:bold">Oui</span> : drush cc ou cr <=> console cache:clear</p>
+                        <p class="fragment"><span style="color:green; font-weight:bold">Oui</span> : extensible via modules</p>
+                        <p class="fragment"><span style="color:red; font-weight:bold">Non</span> : pas de génération de code</p>
+                    </section>
+                    <section>
+                        <h2>Intégration Symfony en cours dans D8</h2>
+                        <p>
+                            Projet "Console"
+
+                            https://github.com/hechoendrupal/DrupalAppConsole
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>TODO (time permitting)</h2>
+                    <p>
+                        couper le réseau et voir si drush télécharge toujours un truc en tâche de fond lors de la 1ere exec
+                    </p>
+                    <p>
+                        se créer une instance de test (Pantheon ? ) et rappatrier les infos en local (joujou alias + sql-dump/rsync)
+                    </p>
+                </section>
+
+				<section>
+					<h2>Liens</h2>
+                    <p>Les liens de bases</p>
+                    <ul>
+                        <li><a href="https://github.com/drush-ops/drush">Page du projet Drush</a></li>
+                        <li><a href="http://drush.ws/">Drush commands</a></li>
+                        <li><a href="http://www.drushcommands.com/">Drush commands (+ sexy)</a></li>
+                    </ul>
+                    <p>Pour aller plus loin</p>
+					<ul>
+						<li><a href="http://fr.slideshare.net/Juliendubreuil/presentation-drush">Présentation Drush par Julien Dubois (2010)</a></li>
+						<li><a href="http://fr.slideshare.net/rodolforipado/drush-avanc-un-cas-dusage">Présentation sql-sync/rsync par Rodolpho Ripado</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>C'est tout</h1>
+					<h3>Questions ?</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
