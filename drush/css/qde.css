@@ -1,0 +1,5 @@
+h2 {
+    word-wrap:normal;
+    word-break: normal;
+    white-space: nowrap;
+}

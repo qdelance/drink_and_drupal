@@ -17,6 +17,10 @@
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
+
+        <!-- Custom CSS for this prez -->
+        <link rel="stylesheet" href="css/qde.css">
+
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -53,8 +57,7 @@
 				<section>
 					<h2>Plan (20 min max promis)</h2>
 					<ul>
-                        <li>A quoi ca sert</li>
-                        <li>Démo !!!</li>
+                        <li>A quoi ca sert / Démo</li>
                         <li>Pour aller plus loin</li>
 					</ul>
 
@@ -64,59 +67,121 @@
 					<section>
 						<h2>Les bases</h2>
 						<p>
-							drush help
+                            <ul>
+                            <li><a href="https://github.com/drush-ops/drush">https://github.com/drush-ops/drush</a></li>
+                            <li>Install via Git ou Composer</li>
+                            <li>Choisir la bonne version (D7 ou D8)</li>
+							<li>drush help</li>
+                            </ul>
 						</p>
 					</section>
+                    <section>
+                        <h2>Télécharger Drupal</h2>
+                        <p>drush dl drupal</p>
+                    </section>
+                    <section>
+                        <h2>Infos sur le système</h2>
+                        <p>drush status</p>
+                    </section>
 					<section>
-						<h2>Infos sur le système</h2>
-						<p>drush status</p>
+						<h2>Installer le site</h2>
+						<p>
+                            drush site-install --db-url=mysql://drupal:drupal@localhost/drupal --account-name=admin --account-pass=drupal
+                        </p>
 					</section>
                     <section>
-                        <h2>Purge le cache</h2>
+                        <h2>Gérer des paquets</h2>
+                        <p>
+                            drush dl, en, dis ...
+                        </p>
+                        <p>
+                            drush dl views
+                        </p>
+                        <p>
+                            drush en views_ui # Téléchargement et activation des dépendances
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Mise à jour globale</h2>
+                        <p>
+                            drush up
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Purger le cache</h2>
                         <p>drush cc (D7) ou cr (D8)</p>
                     </section>
 					<section>
 						<h2>Accéder à la BD</h2>
 						<p>
-                            drush sql
+                            drush sql-cli
                         </p>
 					</section>
                     <section>
                         <h2>Réinitialiser le mot de passe de l'admin...</h2>
                         <p>
-                        drush upwd --password="givememypasswordback" admin
+                            drush upwd --password="new_password" admin
                         </p>
                     </section>
 					<section>
-						<h2>Mettre le site en maintenance</h2>
+						<h2>Positionner une variable</h2>
 						<p>
-                            todo
+                            drush vset site_name "Site de test"
+                        </p>
+                        <p>
+                            drush vset site_offline 1
                         </p>
 					</section>
                     <section>
-                        <h2>Télécharger Drupal</h2>
+                        <h2>Les alias</h2>
                         <p>
-                            drush dl
-                        </p>
-                    </section>
-                    <section>
-                        <h2>Installer le site</h2>
-                        <p>
-                            drush site-install
-                        </p>
-                    </section>
-                    <section>
-                        <h2>Gérer des paquets</h2>
-                        <p>
-                            drush dl, en, dis, up
-                        </p>
-                    </section>
-				</section>
 
-                <section>
-                    <h2>Ca suffit !</h2>
-                    <p>Je veux le voir. En vrai.</p>
-                </section>
+<pre><code>
+# cat ~/.drush/aliases.drushrc.php :
+<?php
+
+// Site local
+$aliases['dnd'] = array(
+    'root' => '/var/www/dnd',
+    'uri' => 'dnd.localdomain',
+    );
+
+    // Site distant (besoin échange clef SSH)
+    $aliases['dnd2'] = array(
+    'root' => '/var/www/dnd2',
+    'uri' => 'dnd2.localdomain',
+    'remote-host' => '192.168.56.211',
+    'remote-user' => 'root',
+);
+</code></pre>
+                        </p>
+                        <p>
+                            drush @alias command
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Synchroniser ses instances</h2>
+                        <p>
+                            drush sql-sync @source @destination
+                        </p>
+                        <p>
+                            drush rsync @dnd:%files @dnd2:%files
+                        </p>
+                        <p>
+                            En général transposable aux instances SaaS type Acquia ou Pantheon
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Possible d'aller plus loin via extensions</h2>
+                        <p>
+                            Intégration drush de modules existant (features, devel)
+                        </p>
+                        <p>
+                            Modules spécifiques qui ajoutent des cibles
+                        </p>
+                    </section>
+
+				</section>
 
                 <section>
                     <section>
@@ -130,35 +195,31 @@
                         <h2>Intégration Symfony en cours dans D8</h2>
                         <p>
                             Projet "Console"
-
-                            https://github.com/hechoendrupal/DrupalAppConsole
+                        </p>
+                        <p>
+                            <a href="https://github.com/hechoendrupal/DrupalAppConsole">https://github.com/hechoendrupal/DrupalAppConsole</a>
                         </p>
                     </section>
                 </section>
 
-                <section>
-                    <h2>TODO (time permitting)</h2>
-                    <p>
-                        couper le réseau et voir si drush télécharge toujours un truc en tâche de fond lors de la 1ere exec
-                    </p>
-                    <p>
-                        se créer une instance de test (Pantheon ? ) et rappatrier les infos en local (joujou alias + sql-dump/rsync)
-                    </p>
-                </section>
-
 				<section>
-					<h2>Liens</h2>
-                    <p>Les liens de bases</p>
+					<h2>Pour aller plus loin</h2>
+                    <h3>Les liens de bases</h3>
                     <ul>
                         <li><a href="https://github.com/drush-ops/drush">Page du projet Drush</a></li>
                         <li><a href="http://drush.ws/">Drush commands</a></li>
                         <li><a href="http://www.drushcommands.com/">Drush commands (+ sexy)</a></li>
                     </ul>
-                    <p>Pour aller plus loin</p>
+                    <h3>Présentations</h3>
 					<ul>
 						<li><a href="http://fr.slideshare.net/Juliendubreuil/presentation-drush">Présentation Drush par Julien Dubois (2010)</a></li>
 						<li><a href="http://fr.slideshare.net/rodolforipado/drush-avanc-un-cas-dusage">Présentation sql-sync/rsync par Rodolpho Ripado</a></li>
 					</ul>
+                    <h3>Utiliser Drush sur SaaS</h3>
+                    <ul>
+                        <li><a href="http://helpdesk.getpantheon.com/customer/portal/articles/411388-drush-command-line-utility">Pantheon</a></li>
+                        <li><a href="https://www.acquia.com/blog/use-drush-sync-your-drupal-installations-between-multiple-environments">Acquia</a></li>
+                    </ul>
 				</section>
 
 				<section>
