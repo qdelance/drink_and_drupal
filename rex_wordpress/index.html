@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Drush - Drupal Shell</title>
+
+		<meta name="description" content="Drupal meetup de Toulouse du 13/04/2015">
+		<meta name="author" content="Quentin Delance">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+
+        <!-- Custom CSS for this prez -->
+        <link rel="stylesheet" href="css/qde.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Drupal</h1>
+					<h3>Réalisation d'un site Wordpress par un drupaliste</h3>
+					<p>
+						<small>Par Quentin Delance / <a href="http://twitter.com/qdelance">@qdelance</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Plan</h2>
+					<ul>
+                        <li>Contexte, pourquoi Wordpress ?</li>
+                        <li>Construction du site</li>
+                        <li>Hébergement, cloud et passage en prod</li>
+                        <li>Good/bad/ugly</li>
+					</ul>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Contexte</h2>
+						<p>
+                            <ul>
+                            <li>Refonte du site corporate de mon entreprise (TODO)</li>
+                            <li>Initialement prévu pour être sous traité ...</li>
+                            <li>... finalement refait en mode express en interne</li>
+                            </ul>
+						</p>
+					</section>
+                    <section>
+                        <h2>Le site existant</h2>
+                        <p>
+                        <ul>
+                            <li>Peu de contenu, 40 vraies pages, peu structuré</li>
+                            <li>Bilingue EN + FR</li>
+                            <li>2 formulaires principaux (contact, partenariat)</li>
+                            <li>Faibles exigences de performance</li>
+                            <li>Attention à l'ergonomie + blog déjà sous Wordpress</li>
+                            <li>Si CMS, ne pas forker (ancien site = Joomla obsolète pour cette raison)</li>
+                            <li>Ne pas faire de développement spécifique</li>
+                        </ul>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Construction : i18n</h2>
+                        <p>
+                        <ul>
+                            <li>Plusieurs modules sous Wordpress</li>
+                            <ul>
+                                <li>WPML : la référence, le plus connu, payant</li>
+                                <li>Polylang : plus récent, totalement libre, très actif</li>
+                            </ul>
+                        <li>Globalement les 2 ont la même ergonomie de base</li>
+                        <li>Chaque noeud est traduit intégralement</li>
+                        </ul>
+                        </p>
+                        <p>
+                        Décision de partir sur Polylang (très satisfait)
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Construction : layout - theme</h2>
+                        <p>
+                        Demande exprimée par les contributeurs
+                        <ul>
+                            <li>Pas de vrai contenu structuré</li>
+                            <li>Vision très "orientée layout" des pages de contenu</li>
+                        </ul>
+                        </p>
+                        <br>
+                        <p class="fragment" data-fragment-index="1" >
+                        Implémentation
+                        <ul class="fragment" data-fragment-index="1" >
+                            <li>Tests de plusieurs possibilités de designers visuels</li>
+                            <li>La plupart des thèmes Wordpress fournissent un module</li>
+                            <li>Choix d'un thème populaire qui embarque Visual Composer</li>
+                        </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Construction : formulaires</h2>
+                        <p>
+                            Peu de réelles difficultés sur ce point.
+                        </p>
+                        <p>
+                            Contact Form 7 contient bien.
+                        </p>
+                        <p>
+                            Seule subtilité = récupération paramètre GET.
+                        </p>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Hébergement : vision initiale</h2>
+                        <p>
+                        <ul>
+                            <li>Architecture finale non décidée au début du projet...</li>
+                            <li>Travail commencé sur VM simple (1 VM LAMP)</li>
+                            <li>Pas de contenu créé sur le site (UGC)</li>
+                        </ul>
+                        </p>
+                        <p class="fragment" data-fragment-index="1" >
+                            Pourquoi pas :
+                            <ul class="fragment" data-fragment-index="1" >
+                            <li>Contribuer sur la pré prod</li>
+                            <li>Pousser la BD + les statiques de la pré prod => prod</li>
+                            </ul>
+                        </p>
+                        <p class="fragment" data-fragment-index="2" >
+                            <span style="color:green; font-weight:bold">Avantage :</span> sécurisation forte de la prod (pas d'admin dessus)
+                        </p>
+                        <p class="fragment" data-fragment-index="3" >
+                            <span style="color:red; font-weight:bold">Inconvénient : </span> dump / restore en production (légère mise en maintenance)
+                        </p>
+
+                        <p class="fragment" data-fragment-index="4" >
+                            <b>Pas si simple avec Wordpress : </b>
+                            <ul class="fragment" data-fragment-index="4" >
+                            <li>Chemins absolus en BD, oblige à passer par un script</li>
+                            <li>Certains éléments supportent mal (formulaires, GO Pricing), les rechercher/remplacer...</li>
+                            </ul>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Hébergement : hébergement AWS</h2>
+                        <p>
+                        <ul>
+                        <li>Une contrainte de la DSI en cours de projet</li>
+                        <li>Volonté de tout migrer en cloud</li>
+                        <li>Profiter de fonction comme l'<em>autoscaling</em> de AWS</li>
+                        <li>Utilisation de RDS (SGBD) et S3 (stockage des statiques)</li>
+                        <li>Mode multi instances, avec possibilité d'avoir des instances localisées près des internautes </li>
+                        </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Hébergement : hébergement AWS</h2>
+                        <p>
+                        Globalement repris de <a href="http://www.markomedia.com.au/scaling-wordpress-in-amazon-cloud/">http://www.markomedia.com.au/scaling-wordpress-in-amazon-cloud</a>
+                        <a href="img/Wordpress-Architecture.png"><img style="max-width:80%" src="img/Wordpress-Architecture.png"></a>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Hébergement : difficultés liées à AWS</h2>
+                        <p>
+                            <ul>
+                            <li>Architecture considérablement complexifiée (l'utiliser si vraiment nécessaire)</li>
+                            <li>Stockage S3 pas vu comme un disque => nécessite utilisation d'un module dédié pour pousser les médias sur S3, nous sommes partis sur WP Total Cache</li>
+                            <li>Medias uploadés automatiquement, mais gros impact sur autres aspects (le thème qui regénère des statiques à partir de less...)</li>
+                            <li>Besoin d'une instance de contribution dédiée (avantage pour la sécurité au passage)</li>
+                            </ul>
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Bilan : The Good</h2>
+                        <p>
+                        <ul>
+                            <li>Site plutôt apprécié des contributeurs, bien pris en main</li>
+                            <li>Polylang satisfaisant pour l'i18n</li>
+                            <li>Résultat assez rapide avec un bon thème</li>
+                            <li>Visual Composer convaincant à l'utilisation
+                                <ul>
+                                    <li>Possible de réaliser vite des layout complexes</li>
+                                    <li>Le contributeur reste autonome (couleurs, espacements, comportement "responsive")</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </p>
+                        <p>
+                            Expérience générale d'utilisation Wordpress plutôt bonne pour un Drupaliste ;)
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Bilan : The Bad</h2>
+                        <p>
+                        <ul>
+                            <li>Avant Polylang, il faut € pour avoir du multilingue</li>
+                            <li>Plus généralement, on trouve moins ce côté je paye pour un module/thème sous Drupal</li>
+                            <li>Utilisation du thème qui fait tout = grosses pages bien lourdes</li>
+                            <li>Dans mon cas, on peut se poser la question de la pertinence de l'utilisation d'un CMS pour un besoin si light</li>
+                        </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Bilan : The Ugly</h2>
+                        <p>
+                        <ul>
+                            <li>Contenu VS Configuration, Wordpress aussi mauvais que Drupal, staging compliqué</li>
+                            <li>Chemins codés en dur dans la base de donnée, et sous 3 formes différentes !</li>
+                            <li>Résultat assez rapide avec un bon thème</li>
+                            <li>Architecture X frontaux au dessus d'1 BD pas simple à mettre en oeuvre</li>
+                        </ul>
+                        </p>
+                    </section>
+                </section>
+
+				<section>
+					<h1>C'est tout</h1>
+					<h3>Questions ?</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
