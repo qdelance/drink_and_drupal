@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+        <meta charset="utf-8">
+
+        <title>Drupal 8 - présentation Capitole du Libre 2015</title>
+
+        <meta name="description" content="Présentation Drupal 8 réalisée pour le capitole du libre 2015 à Toulouse">
+        <meta name="author" content="Quentin Delance">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Drupal 8</h1>
+					<h3>The Good Parts (tm)</h3>
+					<p>
+						<small>Par Quentin Delance / <a href="http://twitter.com/qdelance">@qdelance</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Plan</h2>
+					<ul>
+                        <li>Contexte, Drupal, Drupal 8 etc</li>
+                        <li>Les apports de Drupal 8</li>
+                        <ul>
+                            <li>Edition du contenu</li>
+                            <li>Mise en page</li>
+                            <li>HTML5, mobilité</li>
+                            <li>Internationalisation</li>
+                            <li>Views dans le core</li>
+                            <li>Services web, CMS découplé</li>
+                            <li>Theming</li>
+                            <li>Gestion de configuration / CMI</li>
+                            <li>Performance</li>
+                        </ul>
+                        <li>Et le futur ?</li>
+					</ul>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Contexte</h2>
+					</section>
+                    <section>
+                        <h2>Historique</h2>
+                        <p>
+                            <ul>
+                                <li>Drupal a 15 ans</li>
+                                <li>Drupal 7 sorti en janvier 2011</li>
+                                <li>Drupal 8 démarré en mars ... 2011 (DrupalCon Chicago)</li>
+                                <li>Cible initiale fin 2013...</li>
+                                <li>La version majeure actuelle est donc dans les cartons depuis presque 5 ans !</li>
+                            </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Les "initiatives" fixées en mars 2011</h2>
+                        <p>
+                            Grandes priorités avec mainteneur dédié
+                        </p>
+                        <p>https://www.drupal.org/node/2107085</p>
+                        <p>TODO, les lister, dire que ca correspond en gros au plan actuel</p>
+                    </section>
+                    <section>
+                        <h2>Et au final ?</h2>
+                        <p>Enorme refonte technique</p>
+                        <p>Symfony, Twig, Backbone JS, support PHP 7</p>
+                        <p>Intégration dans le core de XXX modules (Views prévu, mais ca va plus loin)</p>
+                        <p>Noter Views (on y reviendra), mais aussi Date ou Entity reference (en on reviendra pas)</p>
+                        <!-- Aller dans D8 à ce moment pour lister les modules voir le module filter etc -->
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Edition du contenu</h2>
+                    </section>
+                    <section>
+                        <h2>Les points clef</h2>
+                        <p>WYSIWYG en natif \o/</p>
+                        <ul>
+                        <li>CKEditor embarqué</li>
+                        <li>Intégration avec les droits (tags autorisés)</li>
+                        <li>UI de base pour insérer une image</li>
+                        </ul>
+                        <p>In place editing</p>
+                        <p>Types de champ référence (vers autre entité) et lien (URL interne ou externe)</p>
+                    </section>
+                    <section>
+                        <h2>Démo !</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Mise en page</h2>
+                    </section>
+                    <section>
+                        <h2>Les points clef</h2>
+                        <p>Ajout de display + form mode</p>
+                        <p>Nouvelle gestion des blocs (custom block types + nouvelle UI)</p>
+                    </section>
+                    <section>
+                        <h2>Démo !</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>HTML5, mobilité</h2>
+                    </section>
+                    <section>
+                        <h2>Les points clef</h2>
+                        <p>Thèmes Drupal 8 en HTML 5 + responsive design</p>
+                        <p>Y compris dans le backoffice</p>
+                        <p>Modules breakpoints + picture</p>
+                        <p>Types de champ HTML5 ajoutés (email, tel, date, time)</p>
+                    </section>
+                    <section>
+                        <h2>Démo !</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Internationalisation</h2>
+                    </section>
+                    <section>
+                        <h2>Les points clef</h2>
+                        <p>4 modules dans le core remplacent XXX modules contrib \o/</p>
+                        <p>1 seule approche unifie les 2 possibles en D7</p>
+                        <p>Le titre d'un contenu peut se traduire :)</p>
+                        <p>Localisation améliorée</p>
+                    </section>
+                    <section>
+                        <h2>Démo !</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Views dans le core</h2>
+                    </section>
+                    <section>
+                        <h2>Les points clef</h2>
+                        <p>Module très utilisé, avantage de l'avoir dans le core</p>
+                        <p>On a aussi un VBO light</p>
+                        <p>Les IHM d'admin sont des vues (si profil d'install standard)</p>
+                    </section>
+                    <section>
+                        <h2>Démo !</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Services web, CMS découplé</h2>
+                    </section>
+                    <section>
+                        <h2>Les points clef</h2>
+                        <p>Exposition JSON des objets en natif</p>
+                        <p>Possible d'exporter des vues en REST</p>
+                    </section>
+                    <section>
+                        <h2>Démo !</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Theming</h2>
+                    </section>
+                    <section>
+                        <h2>Les points clef</h2>
+                        <p>PHP Template remplacé par Twig (TODO un exemple)</p>
+                        <p>Les thèmes Drupal 8 :
+                            <ul>
+                                <li>Bartik et Stark</li>
+                                <li>Classy</li>
+                                <li>Standard (TODO : montrer qu'il n'y a plus de classes inutiles)</li>
+                            </ul>
+                        </p>
+                        <p>Les suggestions affichées en mode debug (backporté D7)</p>
+                        <p>Globalement simplification des fonctions de thème</p>
+                    </section>
+                    <section>
+                        <h2>Démo !</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Gestion de la configuration / CMI</h2>
+                    </section>
+                    <section>
+                        <h2>Les points clef</h2>
+                        <p>Besoin de séparer le contenu de la configuration</p>
+                        <p>Ne marche qu'entre 2 instances d'un même site (dev => test => prod)</p>
+                        <p>Export / import de configuration via format YML (stocké en BD)</p>
+                        <p>Ne remplace pas complètement Features (qui existe toujours pour D8)</p>
+                    </section>
+                    <section>
+                        <h2>Démo !</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Performance</h2>
+                    </section>
+                    <section>
+                        <h2>Les points clef</h2>
+                        <p>"The Fastest Drupal Release Ever"</p>
+                        <p>Cache de contenu activé en standard</p>
+                        <p>Cache de page anonyme (comme D7) ...</p>
+                        <p>mais surtout un cache intelligent "Dynamic page cache"</p>
+                        <p>Tient compte des facteurs de variabilité (droits, URL, langue etc)</p>
+                        <p>Activé en standard !</p>
+                        <p>TODO : les chiffres, les liens, le tweet de Rasmus</p>
+                    </section>
+                    <section>
+                        <h2>Démo ? (bah pas trop montrable en fait)</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Et le futur ?</h2>
+                        <p>Changer le process de release</p>
+                        <p>Version régulières tous les 6 mois (8.1.x, 8.2.x)</p>
+                        <p>Ne pas casser l'API pour favoriser les montées en version</p>
+                        <p>Mais nouvelles fonctions autorisées</p>
+                        <p>... agile quoi ;)</p>
+                        <p>Finir tout ce qui a été repoussé pour enfin sortir la 8.0.0</p>
+                        <p>Pathauto dans le core ?</p>
+                        <p>Initiative Layout pas totalement aboutie => sorte de Panels dans le core ?</p>
+                        <p>Gestion des médias toujours faible</p>
+                        <p>Encore mieux exploiter Symfony (console + drush ? web profiler ? )</p>
+                    </section>
+                </section>
+
+                <section>
+                    <h1>Fini !</h1>
+                    <h3>Questions ?</h3>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+        </script>
+
+	</body>
+</html>
