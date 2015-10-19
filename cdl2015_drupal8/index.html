@@ -112,15 +112,30 @@
                         <p>
                             Grandes priorités avec mainteneur dédié
                         </p>
-                        <!-- TODO, les lister, dire que ca correspond en gros au plan actuel -->
-                        <p>https://www.drupal.org/node/2107085</p>
+                        <p><a href="https://www.drupal.org/node/2107085">https://www.drupal.org/node/2107085</a></p>
+                        <img src="img/initiatives.png">
                     </section>
                     <section>
-                        <h2>Et au final ?</h2>
+                        <h2>Et au final ? (1/2)</h2>
                         <p>Enorme refonte technique</p>
                         <p>Symfony, Twig, Backbone JS, support PHP 7</p>
-                        <p>Intégration dans le core de XXX modules (Views prévu, mais ca va plus loin)</p>
-                        <p>Noter Views (on y reviendra), mais aussi Date ou Entity reference (en on reviendra pas)</p>
+                        <img src="img/code-size.png">
+                    </section>
+                    <section>
+                        <h2>Et au final ? (2/2)</h2>
+                        <p>Comme pour D6 => D7, durant D7 => D8, il y a :
+                            <ul>
+                                <li>ajout d'un grand nombre de modules liés aux initiatives comme
+                                    <ul>
+                                        <li>Views, VBO</li>
+                                        <li>les X modules liés à i18n</li>
+                                        <li>Web services</li>
+                                        <li>des types de champs HTML5 ou Entity référence</li>
+                                    </ul>
+                                </li>
+                                <li>suppression de quelques modules (blog, poll) => contrib</li>
+                            </ul>
+                        </p>
                         <!-- Aller dans D8 à ce moment pour lister les modules voir le module filter etc -->
                     </section>
                 </section>
@@ -134,7 +149,7 @@
                         <p>WYSIWYG en natif \o/</p>
                         <ul>
                         <li>CKEditor embarqué</li>
-                        <li>Intégration avec les droits (tags autorisés)</li>
+                        <li>Intégration avec les "text formats" (tags autorisés)</li>
                         <li>UI de base pour insérer une image</li>
                         </ul>
                         <p>In place editing</p>
@@ -151,7 +166,7 @@
                     </section>
                     <section>
                         <h2>Les points clef</h2>
-                        <p>Ajout de display + form mode</p>
+                        <p>Ajout de display + form modes</p>
                         <p>Nouvelle gestion des blocs (custom block types + nouvelle UI)</p>
                     </section>
                     <section>
@@ -181,8 +196,8 @@
                     </section>
                     <section>
                         <h2>Les points clef</h2>
-                        <p>4 modules dans le core remplacent XXX modules contrib \o/</p>
-                        <p>1 seule approche unifie les 2 possibles en D7</p>
+                        <p>4 modules dans le core remplacent environ 22 modules contrib en D7 \o/</p>
+                        <p>1 système de traduction (par champ) dans D8 remplace les 2 possibles en D7 (par entité ou par champ)</p>
                         <p>Le titre d'un contenu peut se traduire :)</p>
                         <p>Localisation améliorée</p>
                     </section>
@@ -226,13 +241,14 @@
                     </section>
                     <section>
                         <h2>Les points clef</h2>
-                        <p>PHP Template remplacé par Twig (TODO un exemple)</p>
+                        <!-- TODO image here -->
+                        <p>PHP Template remplacé par Twig</p>
                         <p>Les thèmes Drupal 8 :
                             <ul>
                                 <li>Bartik (front) et Seven (back/admin)</li>
-                                <li>Classy</li>
+                                <li>Classy, thème de base AVEC markup du core</li>
                                 <!-- TODO Mettre une capture d'écran pour éviter de le faire en manuel-->
-                                <li>Stable</li>
+                                <li>Stable, thème de base SANS les markup du core</li>
                             </ul>
                         </p>
                         <p>Les suggestions affichées en mode debug (backporté D7)</p>
@@ -268,11 +284,12 @@
                         <h2>Les points clef</h2>
                         <p>"The Fastest Drupal Release Ever"</p>
                         <p>Cache de contenu activé en standard</p>
-                        <p>Cache de page anonyme (comme D7) ...</p>
-                        <p>mais surtout un cache intelligent "Dynamic page cache"</p>
+                        <ul>
+                            <li>Cache de page anonyme (comme D7) ...</li>
+                            <li>mais surtout un cache intelligent "Dynamic page cache"</li>
+                        </ul>
                         <p>Tient compte des facteurs de variabilité (droits, URL, langue etc)</p>
                         <p>Activé en standard !</p>
-                        <p>TODO : les chiffres, les liens, le tweet de Rasmus</p>
                     </section>
                     <section>
                         <h2>Avant activation du nouveau cache</h2>
@@ -294,10 +311,9 @@
                 <section>
                     <h2>Et le futur ?</h2>
                     <p>Changer le process de release</p>
-                    <p>Version régulières tous les 6 mois (8.1.x, 8.2.x)</p>
+                    <p>Versions régulières tous les 6 mois (8.1.x, 8.2.x)</p>
                     <p>Ne pas casser l'API pour favoriser les montées en version</p>
                     <p>Mais nouvelles fonctions autorisées</p>
-                    <p>... agile quoi ;)</p>
                     <p>Finir tout ce qui a été repoussé pour enfin sortir la 8.0.0</p>
                     <p>Pathauto dans le core ?</p>
                     <p>Initiative Layout pas totalement aboutie => sorte de Panels dans le core ?</p>
@@ -311,6 +327,7 @@
                             <li>Good parts : engineering.wix.com</li>
                             <li>Planning : Drupal Watchdog</li>
                             <li>Perf stats : http://lerdorf.com/d8.html</li>
+                            <li>Code base : http://infogr.am/Drupal-Code-Base</li>
                         </ul>
                     </p>
                 </section>
