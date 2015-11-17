@@ -109,6 +109,7 @@
                             <li>GPLv2</li>
                             <li>3300 core contributors</li>
                             <img src="img/drupal8-contributors.jpg">
+                            <img src="img/drupal8-core-contributors-per-country-per-population.png">
                             <li>Plusieurs entreprises derrière mais communauté forte !</li>
                             <li>Pas de fremium</li>
                         </ul>
@@ -136,7 +137,6 @@
                         <h2>Logiciel libre ?</h2>
                         <p>
                         <ul>
-                            <li>Oui, pour de vrai !</li>
                             <li>Quand Drupal 8 sort, on fait la fête un peu partout</li>
                             <img src="img/d8-parties-map.png">
                         </ul>
@@ -154,7 +154,7 @@
                             <ul>
                                 <li>alpha  : début mi 2013, 15 versions</li>
                                 <li>beta : début octobre 2014, 16 versions</li>
-                                <li>RC : début octobre 2015</li>
+                                <li>RC : début octobre 2015, 4 versions</li>
                             </ul>
                         </p>
                     </section>
@@ -174,17 +174,17 @@
                     </section>
                     <section>
                         <h2>Et au final ? (2/2)</h2>
-                        <p>Comme pour D6 => D7, durant D7 => D8, il y a :
+                        <p>Comme pour D6 => D7, durant D7 => D8, il y a eu :
                             <ul>
                                 <li>ajout d'un grand nombre de modules liés aux initiatives comme
                                     <ul>
                                         <li>Views, VBO</li>
                                         <li>les X modules liés à i18n</li>
                                         <li>Web services</li>
-                                        <li>des types de champs HTML5 ou Entity référence</li>
+                                        <li>des types de champs HTML5 ou Entity Reference</li>
                                     </ul>
                                 </li>
-                                <li>suppression de quelques modules (blog, poll) => contrib</li>
+                                <li>suppression de quelques modules (Blog, Poll) => "contrib"</li>
                             </ul>
                         </p>
                         <!-- Aller dans D8 à ce moment pour lister les modules voir le module filter etc -->
@@ -203,7 +203,7 @@
                         <li>Intégration avec les "text formats" (tags autorisés)</li>
                         <li>UI de base pour insérer une image</li>
                         </ul>
-                        <p>In place editing</p>
+                        <p>In Place Editing (IPE)</p>
                         <p>Types de champ référence (vers autre entité) et lien (URL interne ou externe)</p>
                     </section>
                     <section>
@@ -217,8 +217,8 @@
                     </section>
                     <section>
                         <h2>Les points clef</h2>
-                        <p>Ajout de display + form modes</p>
-                        <p>Nouvelle gestion des blocs (custom block types + nouvelle UI)</p>
+                        <p>Ajout de "display modes" + "form modes"</p>
+                        <p>Nouvelle gestion des blocs (custom block types + nouvelle IHM)</p>
                     </section>
                     <section>
                         <h2>Démo !</h2>
@@ -265,7 +265,7 @@
                         <h2>Les points clef</h2>
                         <p>Module très utilisé, avantage de l'avoir dans le core</p>
                         <p>On a aussi un VBO light</p>
-                        <p>Les IHM d'admin sont des vues (si profil d'install standard)</p>
+                        <p>Les IHM d'admin sont des vues (si profil d'installation standard)</p>
                     </section>
                     <section>
                         <h2>Démo !</h2>
@@ -303,8 +303,9 @@
                             </ul>
                         </p>
                         <p>Les suggestions affichées en mode debug (backporté D7)</p>
-                        <!-- TODO trouver le schéma avec l'enchaînement de fonctions et celles qui ont disparu -->
                         <p>Globalement simplification des fonctions de thème</p>
+                        <a href="https://groups.drupal.org/node/234793">https://groups.drupal.org/node/234793</a>
+                        <img srrc="./img/theme-layer-revamp_0.png">
                     </section>
                     <section>
                         <h2>Démo !</h2>
@@ -360,16 +361,31 @@
                 </section>
 
                 <section>
-                    <h2>Et le futur ?</h2>
-                    <p>Changer le process de release</p>
-                    <p>Versions régulières tous les 6 mois (8.1.x, 8.2.x)</p>
-                    <p>Ne pas casser l'API pour favoriser les montées en version</p>
-                    <p>Mais nouvelles fonctions autorisées</p>
-                    <p>Finir tout ce qui a été repoussé pour enfin sortir la 8.0.0</p>
-                    <p>Pathauto dans le core ?</p>
-                    <p>Initiative Layout pas totalement aboutie => sorte de Panels dans le core ?</p>
-                    <p>Gestion des médias toujours faible</p>
-                    <p>Encore mieux exploiter Symfony (console + drush ? web profiler ? )</p>
+                    <section>
+                        <h2>Et le futur ? (1/2)</h2>
+                        <ul>
+                            <li>Changer le process de release</li>
+                            <li>Versions régulières tous les 6 mois (8.1.x, 8.2.x)</li>
+                            <li>Ne pas casser l'API pour favoriser les montées en version</li>
+                            <li>Mais nouvelles fonctions autorisées</li>
+                            <li>Finir tout ce qui a été repoussé pour enfin sortir la 8.0.0</li>
+                    </section>
+                    <section>
+                        <h2>Et le futur ? (1/2)</h2>
+                        <ul>
+                            <li>Pathauto dans le core ?</li>
+                            <li>Initiative Layout pas totalement aboutie, fusion Panels / Display Suite : https://www.drupal.org/node/2612040</li>
+                            <li>Gestion des médias : http://janezurevc.name/when-will-media-be-ready-drupal-8</li>
+                            <li>Encore mieux exploiter Symfony :
+                                <ul>
+                                    <li>console, fusion avec Drush ?</li>
+                                    <li>web profiler ? intégré dans devel : https://www.drupal.org/project/devel
+                                    <li>fin des hooks ?</li>
+                                </ul>
+                            </li>
+                            <li><p>Meilleur support de composer : http://janezurevc.name/when-will-media-be-ready-drupal-8</p></li>
+                        </ul>
+                    </section>
                 </section>
 
                 <section>
