@@ -39,6 +39,22 @@ Besoin de se faire une arbo (dossier "web", un gitignore qui évite les commits 
 Pas de logs, pas de cache, pas d'environnement
 Pas de Twig, ni de Doctrine
 Routing + Event Dispatcher + Injection de dépendance (Pimple)
-Pas même de gestion élémentaire des erreurs
+Pas même de gestion élémentaire des erreurs autre que les Exceptions PHP (errors PHP non traitées)
+
+Twig
+----
+
+composer require...
+Activation du provider Twig (besoin du bridge, sinon pas de path(), ni URL()), OK pour Flash cependant via SessionProvider
+asset() à remplacer par {{ app.request.basepath }}
+
+Doctrine
+--------
+
+Il y a un provider, mais qui ne fait que DBAL et pas intégration ORM : http://silex.sensiolabs.org/doc/providers/doctrine.html
+Possible d'en chercher 1 third party : 
+ * https://github.com/silexphp/Silex/wiki/Third-Party-ServiceProviders
+ * https://packagist.org/packages/dflydev/doctrine-orm-service-provider
+Pas de scafolding via console...
 
 En contrepartie, vendor SF = 60 Mo versus vendor Silex = 6 Mo
