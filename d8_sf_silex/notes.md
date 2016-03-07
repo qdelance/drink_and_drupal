@@ -35,7 +35,7 @@ Silex
 composer require silex/silex
 
 => un dossier vendor et c'est tout !
-Besoin de se faire une arbo (dossier "web", un gitignore qui évite les commits de /vendor/)
+Besoin de se faire une arbo (dossier "web", un .htaccess, un gitignore qui évite les commits de /vendor/, ajout du psr-0 dans composer.json pour pouvoir structurer son code plus tard en dehors du docroot)
 Pas de logs, pas de cache, pas d'environnement
 Pas de Twig, ni de Doctrine
 Routing + Event Dispatcher + Injection de dépendance (Pimple)
@@ -47,6 +47,11 @@ Twig
 composer require...
 Activation du provider Twig (besoin du bridge, sinon pas de path(), ni URL()), OK pour Flash cependant via SessionProvider
 asset() à remplacer par {{ app.request.basepath }}
+
+Form
+----
+
+oblige à charge de nombreux composant Symfony (reload, error, composer reprire, reload, error...)
 
 Doctrine
 --------
