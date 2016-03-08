@@ -47,11 +47,12 @@ Twig
 composer require...
 Activation du provider Twig (besoin du bridge, sinon pas de path(), ni URL()), OK pour Flash cependant via SessionProvider
 asset() à remplacer par {{ app.request.basepath }}
+pas de cache par défaut dans l'exemple de la doc
 
 Form
 ----
 
-oblige à charge de nombreux composant Symfony (reload, error, composer reprire, reload, error...)
+oblige à charge de nombreux composants Symfony (reload, error, composer reprire, reload, error...)
 
 Doctrine
 --------
@@ -61,5 +62,7 @@ Possible d'en chercher 1 third party :
  * https://github.com/silexphp/Silex/wiki/Third-Party-ServiceProviders
  * https://packagist.org/packages/dflydev/doctrine-orm-service-provider
 Pas de scafolding via console...
+Utilisation pénible de fonctions bas niveau (lecture d'une date => chaîne à convertir soit même)
 
-En contrepartie, vendor SF = 60 Mo versus vendor Silex = 6 Mo
+En contrepartie, vendor SF = 60 Mo versus vendor Silex = 6 Mo ... à l'init car à la fin on tombe à 32 Mo
+Dans l'ensemble, le code des 2 projets Github (Symfony et Silex) reste proche, peu d'adaptation sur les templates Twig et le code des controllers
