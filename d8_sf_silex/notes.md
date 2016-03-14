@@ -1,10 +1,17 @@
 D8
 ===
 
-TODO
+Création de type de contenu classique, lien vers taxonomie.
+Création d'une vue page de listing
+Création d'une vue bloc "best rated"
+TODO : faire une commande Drush qui importe les films à partir du CSV...
+TODO : tester thème bootstrap ?
 
 Symfony
 =======
+
+Création du projet avec Symfony
+-------------------------------
 
 symfony new <projet>
 
@@ -21,6 +28,7 @@ Framework complet :
  * Environnements (prod/test/dev), caches et logs par environnements
 
 SF3 (SF 2.8 avec le deprecated en moins)
+----------------------------------------
 
 Annotations pour le routing et plus YML
 1 seul AppBundle
@@ -31,6 +39,9 @@ Installer Symfony
 
 Silex
 =====
+
+Création du projet avec Silex
+-----------------------------
 
 composer require silex/silex
 
@@ -47,12 +58,13 @@ Twig
 composer require...
 Activation du provider Twig (besoin du bridge, sinon pas de path(), ni URL()), OK pour Flash cependant via SessionProvider
 asset() à remplacer par {{ app.request.basepath }}
-pas de cache par défaut dans l'exemple de la doc
+Besoin d'activer un provider pour {{ render() }}
+Pas de cache par défaut dans l'exemple de la doc
 
 Form
 ----
 
-oblige à charge de nombreux composants Symfony (reload, error, composer reprire, reload, error...)
+Oblige à charger de nombreux composants Symfony (reload, error, composer require, reload, error...)
 
 Doctrine
 --------
