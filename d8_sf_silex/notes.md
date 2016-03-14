@@ -76,5 +76,5 @@ Possible d'en chercher 1 third party :
 Pas de scafolding via console...
 Utilisation pénible de fonctions bas niveau (lecture d'une date => chaîne à convertir soit même)
 
-En contrepartie, vendor SF = 60 Mo versus vendor Silex = 6 Mo ... à l'init car à la fin on tombe à 32 Mo
+En contrepartie, vendor SF = 51 Mo versus vendor Silex = 4,6 Mo ... à l'init car à la fin on tombe à 32 Mo
 Dans l'ensemble, le code des 2 projets Github (Symfony et Silex) reste proche, peu d'adaptation sur les templates Twig et le code des controllers
