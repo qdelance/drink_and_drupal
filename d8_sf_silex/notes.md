@@ -7,6 +7,8 @@ Création d'une vue bloc "best rated"
 TODO : faire une commande Drush qui importe les films à partir du CSV...
 TODO : tester thème bootstrap ?
 
+Note : outils de dev D8 : http://seth.fischer.nz/drupal-8-development-tools.html
+
 Symfony
 =======
 
