@@ -34,6 +34,7 @@ Behat: official PHP Cucumber implementation for Behaviour Driven Development (BD
 Mink: Behat extension to integrate with broser (Goutte => simple HTTP scrapping from Symfony or Selenium, needed for JS)
 
 ## Installation
+
 Install PHP components with composer commands
 
 ```
@@ -44,6 +45,10 @@ Selenium server is needed:
 
 *   `java -jar selenium-server-standalone-2.53.0.jar -Dwebdriver.chrome.driver=/usr/lib/chromium-browser/chromedriver`
 *   nothing needed for FF, extra package (*chromedriver*, distribution dependant) for Chrome + parameter below
+
+You may also use docker images, they are working out of the box, but:
+*   you have no display (you should open VNC port if you want to see the browser)
+*   on Linux, docker containers have no access to internet if host (running the containers) is connected on WIFI
 
 ## Setup 
 
@@ -86,18 +91,18 @@ Ready to edit tests!
 
 ## Tests execution
 
-Custom steps
-Pb of css and xpath filter
-=> no id/name => we need to rely on custom (trainline with ember, iflya380)
-Pb of Element is not visible (scrollToView)
-Intellij integration
-setValue() pb (trainline)
+This should cover the following points: 
+*   How to write custom steps
+*   Pb of css and xpath filters => if we have no id/name in HTML source, we need to rely on custom selectors (trainline with EmberJS, Iflya380 with React)
+*   "Element is not visible/clickable" error (scrollToView)
+*   Intellij integration
+*   setValue() pb (trainline)
 
 ![Behat exec](./behat_console_exec.png)
 
 ## Tooling
 
-Decent intellij integration: code completion, step generation, PHPUnit like exec console
+Decent Intellij integration: code completion, step generation, PHPUnit like exec console
 
 ![Behat intelij](./behat_intellij.png)
 
@@ -118,6 +123,8 @@ To use Chrome, ChromeDriver must be in the PATH
 
 Done in *.robot files
 
+Browser familly + screen resolution all defined in the same file
+
 ## Tests writing
 
 Commands available here:
@@ -133,16 +140,20 @@ robot *.robot
 ![Robot exec](./robot_console_exec.png)
 
 
-Keywords (instead of steps)
+Keywords (instead of Steps)
 
 ## Tooling
 
-Ride UI
+Ride UI https://github.com/robotframework/RIDE /!\ Python 3 support is still in progress, conflict with newer wxGtk versions on modern Linux distributions
+
 HTML output provided natively ![Robot web_output](./robot_web_output.png)
+
 Intellij: limited code completion, exec thru external tools
 
 # Sumup
 
-Try to always use regular HTML forms, use ids (#action_button)
+Try to always use regular HTML forms, set "id" attributes to be able to use reliable/simpler selectors (#action_button)
+
 Starting writing tests from the start of the project (easier + can be used for regression tests)
-Beware with animations (slow down, wait() needed in tests)
+
+Beware with animations (slows down test execution due to the need of wait() calls)
