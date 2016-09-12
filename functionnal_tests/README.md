@@ -10,7 +10,7 @@ Browser automation
 
 Guerkin: high level language
 
-```
+```cucumber
  1: Feature: Some terse yet descriptive text of what is desired
  2:   Textual description of the business value of this feature
  3:   Business rules that govern the scope of the feature
